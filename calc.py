@@ -40,12 +40,19 @@ def evaluate_hexadecimal(s):
              n = n * 16 + evaluate_single_hexadecimal_digit(c)
     return n
 
-def evaluate(s):
+def evaluate_section(s):
     if s.startswith("-"):
         return evaluate(s[1:]) * -1
     if s.startswith("0x"):
         return evaluate_hexadecimal(s[2:].upper())
     return evaluate_floating_point_number(s)
+
+def evaluate(s):
+    sections = s.split("+")
+    sum = 0
+    for section in sections:
+        sum = sum + evaluate_section(section) 
+    return sum   
 
 if __name__ == "__main__":
     pass
