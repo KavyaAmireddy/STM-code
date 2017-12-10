@@ -1,10 +1,8 @@
-sudo: required
-
-services:
-  - docker
-
+language: python
+python:
+  - "3.6"
+# command to run tests
 install:
-  - docker pull drdelozier/testhello:v1
-
+    - pip install requests
 script:
-  - docker run drdelozier/testhello:v1
+  - python3 test_calc.py
