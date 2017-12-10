@@ -1,0 +1,10 @@
+sudo: required
+
+services:
+  - docker
+
+install:
+  - docker pull drdelozier/testhello:v1
+
+script:
+  - docker run drdelozier/testhello:v1
