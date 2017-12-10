@@ -5,4 +5,4 @@ python:
 install:
     - pip install requests
 script:
-  - python3 test_calc.py
+  - python3 testcalc.py
