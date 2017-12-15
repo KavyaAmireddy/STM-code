@@ -4,5 +4,6 @@ python:
 # command to run tests
 install:
     - pip install requests
+    - pip install selenium
 script:
-  - python3 test_calc.py
+  - python3 test_chemjobskent.py
